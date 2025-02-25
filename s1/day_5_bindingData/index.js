@@ -1,5 +1,5 @@
-//GOAL: can we move shapes around based on their data? 
-// Can we store more information inside every data piece aside from just numbers?
+//GOAL: practice -- can we move shapes around based on their data? 
+//new thing -- can we store more information inside every data piece aside from just numbers?
 
 var w = 800;
 var h = 800;
@@ -11,6 +11,80 @@ var canvas = d3.select("#canvas")
 				.attr("height", h)
 				.style("background-color","black");
 
+var data = [
+	{
+		"name":"amanda",
+		"coffee":0,
+		"water":1
+	},
+	{
+		"name":"masha",
+		"coffee":1,
+		"water":2
+	},
+	{
+		"name":"sara",
+		"coffee":0,
+		"water":2
+	},
+	{
+		"name":"frida",
+		"coffee":0,
+		"water":0
+	},
+	{
+		"name":"theresa",
+		"coffee":1,
+		"water":0
+	},
+	{
+		"name":"clara",
+		"coffee":2,
+		"water":2
+	},
+	{
+		"name":"lærke",
+		"coffee":2,
+		"water":2
+	},
+	{
+		"name":"katinka",
+		"coffee":1,
+		"water":1
+	},
+	{
+		"name":"eli",
+		"coffee":3,
+		"water":1
+	},
+	{
+		"name":"mila",
+		"coffee":1,
+		"water":2
+	}
+]
+
+var lines = canvas.selectAll("linesToData")
+					.data(data)
+					.join("line")
+					.attr("x1", function(d,i){
+						return 50+i*10;
+					})
+					.attr("y1", h/2)
+					.attr("x2", function(d,i){
+						return 50+(i*10)+d.coffee*5;
+					})
+					.attr("y2", function(d){
+						return h/2-d.water*10;
+					})
+					.attr("stroke", "white")
+
+
+
+
+
+
+/*
 var dataObject = [
 		{
 			name:"annelie",
@@ -94,7 +168,7 @@ var circles = canvas.selectAll("circle")
                     //     }
                     // })
 					.attr("fill", "white")
-
+*/
 
 
 
