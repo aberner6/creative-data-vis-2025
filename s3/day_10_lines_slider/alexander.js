@@ -5,7 +5,7 @@ var leftMargin = rad * 2;
 var imgW = rad * 4;
 var imgH = rad * 4;
 
-var svg = d3.select("svg")
+var svg = d3.select("#canvas").append("svg")
     .attr("width", w)
     .attr("height", h)
     .style("background-color", "black")
