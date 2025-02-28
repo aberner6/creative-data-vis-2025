@@ -45,7 +45,7 @@ function drawRadialLine() {
         .join("path")
         .attr("fill", "none")
         .attr("stroke", "white")
-        .attr("stroke-width", "0.2")
+        .attr("stroke-width", "0.5")
           .attr('marker-start', 'url(#dot)')
           .attr('marker-mid', 'url(#dot)')
           .attr('marker-end', 'url(#dot)')

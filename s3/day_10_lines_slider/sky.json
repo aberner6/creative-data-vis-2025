@@ -1,12 +1,12 @@
 [
   {"day":"monday", "sky":100},
-  {"day":"tuesday", "sky":40},
+  {"day":"tuesday", "sky":90},
   {"day":"wednesday", "sky":80},
   {"day":"thursday", "sky":70},
-  {"day":"friday", "sky":100},
-  {"day":"saturday", "sky":90},
-  {"day":"sunday", "sky":90},
-  {"day":"monday", "sky":100},
-  {"day":"tuesday", "sky":100},
-  {"day":"wednesday", "sky":30}
+  {"day":"friday", "sky":60},
+  {"day":"saturday", "sky":50},
+  {"day":"sunday", "sky":40},
+  {"day":"monday", "sky":30},
+  {"day":"tuesday", "sky":20},
+  {"day":"wednesday", "sky":10}
 ]
