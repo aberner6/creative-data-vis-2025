@@ -28,15 +28,15 @@ var margin = r*4;
 
 // //make a circle for every datapoint
 // //spread the circles along the x axis using the xScale
-// var circles = svg.selectAll("circle")
-// 				.data(skyData)
-// 				.join("circle")
-// 				.attr("cx", function(d){
-// 					return xScale(d);
-// 				})
-// 				.attr("cy", h/2)
-// 				.attr("r", 10)
-// 				.attr("fill", "white")
+var circles = svg.selectAll("circle")
+				.data(skyData)
+				.join("circle")
+				.attr("cx", function(d){
+					return xScale(d);
+				})
+				.attr("cy", h/2)
+				.attr("r", 10)
+				.attr("fill", "white")
 
 
 
