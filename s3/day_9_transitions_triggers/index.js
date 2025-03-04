@@ -14,57 +14,34 @@ var svg = d3.select("#canvas")
   })
 
   // ////1. CREATE CIRCLES ACCORDING TO DATA
-//   var arrData = [5, 8, 6, 10, 7, 2]
-//   var circs = svg.selectAll('anything')
-// 	.data(arrData)
-// 	.join('circle')
-// 	.attr('cx', w/2)
-// 	.attr('cy', h/2)
-// 	.attr("r", 1)
-// 	.attr('fill','none')
-// 	.attr("stroke","pink")
-// 	.attr("stroke-width",5)
-// 	.transition()
-// 	.duration(8000)
-// 	.attr('r', function(d){
-// 		return r*d;
-// 	})
-// 	.attr("stroke","blue")
-
-
-////THEN UPDATE THEM ALL INTO NEW DATA
-//   var newData = [];
-//   function updateData(){
-// 	newData = [7,10,3,6,3]
-// 	updateVis();
-//   }
-
-//   function updateVis(){
-// 	  console.log("hi")
-// 	d3.selectAll("circle").exit().remove();
-// 	circs
-// 		.data(newData)
-// 		.transition()
-// 		// .delay(function(d, i) {
-// 		// 	return i / newData.length * 4000;   // <-- Where the magic happens
-// 		// })
-// 		.duration(2000)
-// 		.attr('r', function(d){
-// 			return r*d;
-// 		})
-//   }
+  var arrData = [5, 8, 6, 10, 7, 2]
+  var circs = svg.selectAll('anything')
+	.data(arrData)
+	.join('circle')
+	.attr('cx', w/2)
+	.attr('cy', h/2)
+	.attr("r", 1)
+	.attr('fill','none')
+	.attr("stroke","pink")
+	.attr("stroke-width",5)
+	.transition()
+	.duration(8000)
+	.attr('r', function(d){
+		return r*d;
+	})
+	.attr("stroke","blue")
 
 
 
 
-
-////2. TRANSITIONS WITH PROGRESSIVELY INCREASING DATA
-var arrData = [5, 8, 6, 10, 7, 2]
+// ////2. TRANSITIONS WITH PROGRESSIVELY INCREASING DATA
+var moreData = [1, 18, 2, 12, 3, 1]
 var counter = 0;
 var newData = [];
 var circs;
 function updateData(){
-	newData.push(arrData[counter]);
+	// newData = (moreData);
+	newData.push(moreData[counter])
 	counter++;
 	updateVis();
 }

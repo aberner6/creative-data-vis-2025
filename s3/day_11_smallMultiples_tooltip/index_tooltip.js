@@ -64,21 +64,31 @@ function draw(){
 
       d3.select(this)
         .transition()
-        .attr('fill','pink');
+        .attr('fill','pink')
+        .attr('r',rad*2)
 
-      // div.transition()    
-      //   .duration(200)    
-      //   .style("opacity", .9);    
-      // div.html(thisData.sky + "<br/>"+thisData.day) 
-        // .style("left", (event.pageX) + "px")   
-        // .style("top", (event.pageY - 28) + "px");   
+      div.transition()    
+        .duration(200)    
+        .style("opacity", .9);    
+      div.html("This is the sky observation: "+thisData.sky + "<br/>This is the day of that data: "+thisData.day) 
+        .style("left", (event.pageX) + "px")   
+        .style("top", (event.pageY - 28) + "px");   
     })          
     .on("mouseout", function(d) {  
       d3.select(this)
         .transition()
         .attr('fill','black') 
+        .attr('r', function(d){
+          return radScale(d.sky)
+        })
       text.transition()    
         .duration(500)    
         .style("opacity", 0); 
     }); 
+  
+    myText = g.append('text')
+              .text(function(d){
+                return d.day
+              })
+              .attr('y',50)
   }
