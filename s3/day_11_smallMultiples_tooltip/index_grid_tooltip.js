@@ -56,7 +56,7 @@ function draw(){
     .attr('r', function(d){ 
       return radScale(d.sky) 
     })
-    .attr('fill','none')
+    .attr('fill','white')
     .attr('stroke','black')
 
     //draw a rectangle that changes according to how hot that day is
@@ -78,9 +78,9 @@ function draw(){
   function setTooltips(){
       // reference the shape that you want connected to the mouseover
       // set the tooltip content
-      secondShape.attr('data-tippy-content', (d,i)=>{
-          return `Day: ${d.day}, Temp: ${d.temp}, Sky: ${d.sky}`;
+      firstCirc.attr('data-tippy-content', function(d,i){
+          return `Day: ${d.day}, Temperature: ${d.temp}, Sky: ${d.sky}`;
       });
-      tippy(secondShape.nodes());
+      tippy(firstCirc.nodes());
     }
 }

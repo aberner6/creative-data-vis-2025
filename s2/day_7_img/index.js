@@ -1,8 +1,7 @@
 var w = 1800;
 var h = 800;
-var rad = 20;
-var imgSize = rad*8;
-var margin = imgSize/2;
+var imgSize = 200;
+var margin = imgSize;
 var svg = d3.select("#canvas").append("svg")
 			.attr("width",w)
 			.attr("height",h)
@@ -26,16 +25,16 @@ var svg = d3.select("#canvas").append("svg")
 ////2. IMAGES CAN BE CONTAINED IN DATASETS
 var imgData = [
 	{
-	"day":4,
-	"img":"img1.jpeg"
+		"day":4,
+		"img":"img1.jpeg"
 	},
 	{
-	"day":14,
-	"img":"img2.jpeg"
+		"day":14,
+		"img":"img2.jpeg"
 	},
 	{
-	"day":24,
-	"img":"img3.jpeg"
+		"day":24,
+		"img":"img3.jpeg"
 	},
 	{
 		"day":4,
@@ -50,39 +49,40 @@ var imgData = [
 		"img":"img6.jpeg"
 	}
 ];
-
+var data = [1,2,3,4,5,6]
 var xScale = d3.scaleLinear()
 	.domain([0, imgData.length-1])
 	.range([margin, w-margin*2])
 
 var images = svg.selectAll("anything")
-	.data(imgData)
+	.data(data)
 	.join("image")
 	.attr("x", function(d,i){
-		return xScale(i)
+		// return xScale(i)
+		return w/2;
 	})
 	.attr("y", h/2)
 	.attr("width", imgSize)
 	.attr("height", imgSize)
-	// .attr("opacity", .5)
+	.attr("opacity", .5)
 	.attr("xlink:href", function(d,i){
-		return d.img;
+		return "img"+i+".jpeg"
 	})
 
 
-var labels = svg.selectAll('anything')
-  .data(imgData)
-  .join('text')
+// var labels = svg.selectAll('anything')
+//   .data(imgData)
+//   .join('text')
 //   .attr('class','labels')
-  .attr('x', function(d,i){
-    return xScale(i);
-  })
-  .attr('y', h/2+imgSize+40)
-  .text(function(d){
-	return d.day;
-  })
-  .style('font-family','ABC Whyte Unlicensed Trial')
-  .style('font-size','48px')
+//   .attr('x', function(d,i){
+//     return xScale(i);
+//   })
+//   .attr('y', h/2+imgSize+40)
+//   .text(function(d){
+// 	return d.day
+//   })
+//   .style('font-family','ABC Whyte Unlicensed Trial')
+//   .style('font-size','48px')
   .attr('fill','white')
 
 
